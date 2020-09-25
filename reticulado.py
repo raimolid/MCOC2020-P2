@@ -30,6 +30,10 @@ class Reticulado(object):
 
 	def obtener_nodos(self):
 		"""Implementar"""
+		#Cambiar Tamaño
+		self.xyz.resize((self.Nnodos+1,3))
+		self.xyz[self.Nnodos,:] = [x,y,z]
+		self.Nnodos +=1
 		return 
 
 	def obtener_barras(self):
@@ -57,4 +61,7 @@ class Reticulado(object):
 		return
 
 	def __str__(self):
-		return "Hola, soy un reticulado vacio!"
+		s = "Hola soy un reticulado vacio!"
+		s += 
+		return "Descripcion de la clase para imprimir"
+
