@@ -57,4 +57,4 @@ class Reticulado(object):
 		return
 
 	def __str__(self):
-		return "Hola, soy un reticulado!"
+		return "Hola, soy un reticulado vacio!"
