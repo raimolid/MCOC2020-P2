@@ -66,5 +66,11 @@ class Reticulado(object):
 		return
 	
 	def __str__(self):
-		"""Implementar"""
-		return
+		s = "nodos:\n"
+		for i in range(self.Nnodos):
+			s += f"{i} : ( {self.xyz[i][0]}, {self.xyz[i][1]}, {self.xyz[i][2]} )\n"
+		s += "barras:\n"
+		for j in range(len(self.barras)):
+			s += f"{j} : [ {self.barras[j].ni} {self.barras[j].nj} ]\n"
+			
+		return s
