@@ -18,23 +18,27 @@ class Barra(object):
 
 	def obtener_conectividad(self):
 		"""Implementar"""
-		return [self.ni, self.nj] 
+		return 
 
 	def calcular_area(self):
-		A = np.pi*(self.R**2) - np.pi*(self.R-self.t)**2
-            	return A 
+		"""Implementar"""
+		return 
 
 	def calcular_largo(self, reticulado):
-		xi = reticulado.obtener_coordenada_nodal(self.ni)
-            	xj = reticulado.obtener_coordenada_nodal(self.nj)
-            	dij = xi - xj
-            	return np.sqrt(np.dot(dij,dij)) 
+		"""Devuelve el largo de la barra. 
+		xi : Arreglo numpy de dimenson (3,) con coordenadas del nodo i
+		xj : Arreglo numpy de dimenson (3,) con coordenadas del nodo j
+		"""
+		"""Implementar"""
+		return 
 
 	def calcular_peso(self, reticulado):
-		L = self.calcular_largo(reticulado) 
-            	A = self.calcular_area()
-            	peso = self.ρ * A * L * g 
-            	return peso 
+		"""Devuelve el largo de la barra. 
+		xi : Arreglo numpy de dimenson (3,) con coordenadas del nodo i
+		xj : Arreglo numpy de dimenson (3,) con coordenadas del nodo j
+		"""
+		"""Implementar"""
+		return 
 
 
 
