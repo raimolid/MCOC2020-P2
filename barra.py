@@ -51,7 +51,7 @@ class Barra(object):
 
 
     def obtener_rigidez(self, ret):
-        """Devuelve la rigidez ke del elemento. 
+        """Devuelve la rigidez ke del elemento. Arreglo numpy de (4x4)
         ret: instancia de objeto tipo reticulado
         """
         
@@ -60,7 +60,7 @@ class Barra(object):
         return ke
 
     def obtener_vector_de_cargas(self, ret):
-        """Devuelve el vector de cargas nodales fe del elemento. 
+        """Devuelve el vector de cargas nodales fe del elemento. Vector numpy de (4x1)
         ret: instancia de objeto tipo reticulado
         """
 
@@ -70,7 +70,7 @@ class Barra(object):
 
 
     def obtener_fuerza(self, ret):
-        """Devuelve la fuerza se que debe resistir la barra 
+        """Devuelve la fuerza se que debe resistir la barra. Un escalar tipo double. 
         ret: instancia de objeto tipo reticulado
         """
 

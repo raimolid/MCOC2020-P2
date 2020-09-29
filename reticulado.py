@@ -14,7 +14,7 @@ class Reticulado(object):
         self.cargas = {}
         self.restricciones = {}
         self.Ndimensiones = 2
-        self.has_solution = False
+        self.tiene_solucion = False
 
     def agregar_nodo(self, x, y, z=0):
         if self.Nnodos+1 > Reticulado.__NNodosInit__:
@@ -120,10 +120,10 @@ class Reticulado(object):
         self.u[gdl_libres] = uf
 
         #Marcar internamente que se tiene solucion
-        self.has_solution = True
+        self.tiene_solucion = True
 
     def obtener_desplazamiento_nodal(self, n):
-        """Entrega desplazamientos en el nodo n como un vector numpy
+        """Entrega desplazamientos en el nodo n como un vector numpy de (2x1) o (3x1)
         """
         dofs = [2*n, 2*n+1]
         return self.u[dofs]
@@ -132,7 +132,8 @@ class Reticulado(object):
 
     def recuperar_fuerzas(self):
         """Una vez resuelto el sistema de ecuaciones, se forma un
-        vector con todas las fuerzas de las barras. 
+        vector con todas las fuerzas de las barras. Devuelve un 
+        arreglo numpy de (Nbarras x 1)
         """
         
         fuerzas = np.zeros((len(self.barras)), dtype=np.double)
@@ -177,7 +178,7 @@ class Reticulado(object):
             s += f"{nodo} : {self.cargas[nodo]}\n"
         s += "\n\n"
 
-        if self.has_solution:
+        if self.tiene_solucion:
             s += "desplazamientos:\n"
             if self.Ndimensiones == 2:
                 uvw = self.u.reshape((-1,2))
@@ -185,7 +186,7 @@ class Reticulado(object):
                     s += f"  {n} : ( {uvw[n,0]}, {uvw[n,1]}) \n "
         s += "\n\n"
 
-        if self.has_solution:
+        if self.tiene_solucion:
             f = self.recuperar_fuerzas()
             s += "fuerzas:\n"
             for b in range(len(self.barras)):
